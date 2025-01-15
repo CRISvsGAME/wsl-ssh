@@ -14,3 +14,11 @@ $Env:Enabled = "True"
 $Env:LocalPort = "22"
 $Env:Protocol = "TCP"
 ```
+
+## Create
+
+### PowerShell
+
+```powershell
+powershell -ExecutionPolicy Bypass -File "create.ps1"
+```
