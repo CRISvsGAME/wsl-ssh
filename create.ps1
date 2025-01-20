@@ -65,6 +65,14 @@ try {
 
         Write-Host "Firewall Rule '$Env:Name' Created Successfully"
     }
+
+    if (-Not $Env:ListenAddress `
+            -Or -Not $Env:ListenPort `
+            -Or -Not $Env:ConnectAddress `
+            -Or -Not $Env:ConnectPort) {
+        Write-Host "Portproxy Rule Variables Not Set in '$ConfigFile'"
+        exit 1
+    }
 }
 catch {
     Write-Host "Create Error: $($PsItem.Exception.Message)"
