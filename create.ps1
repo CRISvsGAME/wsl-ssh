@@ -73,6 +73,11 @@ try {
         Write-Host "Portproxy Rule Variables Not Set in '$ConfigFile'"
         exit 1
     }
+
+    netsh interface portproxy add v4tov4 listenaddress=$Env:ListenAddress `
+        listenport=$Env:ListenPort connectaddress=$Env:ConnectAddress connectport=$Env:ConnectPort
+
+    Write-Host "Portproxy Rule '${Env:ListenAddress}:${Env:ListenPort}' Created Successfully"
 }
 catch {
     Write-Host "Create Error: $($PsItem.Exception.Message)"
