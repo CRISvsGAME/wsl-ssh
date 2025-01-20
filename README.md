@@ -28,3 +28,11 @@ $Env:ConnectPort = "22"
 ```powershell
 powershell -ExecutionPolicy Bypass -File "create.ps1"
 ```
+
+## Remove
+
+### PowerShell
+
+```powershell
+powershell -ExecutionPolicy Bypass -File "remove.ps1"
+```
